@@ -139,3 +139,27 @@ TWEET FEED
 	font-weight: bold;
 	text-shadow: 0px 1px 1px #a0dbc4;
 }
+
+/*
+----------------------------------------
+FOOTER
+----------------------------------------
+*/
+
+.footer {
+	background-color: #a0dbc4;
+}
+
+.footer-note {
+	text-align: center;
+	letter-spacing: 2px;
+	font-size: 200%;
+	padding: 20px;
+	font-weight: bold;
+}
+
+.author {
+	font-size: 12px;
+	margin-top: 10px;
+	font-weight: 100;
+}

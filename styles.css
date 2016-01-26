@@ -58,16 +58,32 @@ STYLES
 */
 
 body {
-	font-size: 14px;
-	font-family: Arial, sans-serif;
+	font: 300 14px/21px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.tweet {
-	border: 1px solid black;
-	width: 60%;
-	margin: 20px auto;
-	padding: 10px;
+/*
+----------------------------------------
+HEADER
+----------------------------------------
+*/
+
+.twitter-logo {
+	display: block;
+	margin: 40px auto;
 }
+
+h1 {
+	font-size: 300%;
+	text-align: center;
+	margin: 40px;
+}
+
+
+/*
+----------------------------------------
+BUTTON
+----------------------------------------
+*/
 
 .new-tweet-btn {
 	display: block;
@@ -77,19 +93,25 @@ body {
 	padding: 5px 10px 5px 10px;
 	color: #444;
 	text-shadow: 0px 1px 1px #fff;
-	border-bottom: 2px solid #b2b2b2;
+	border: 2px solid #b2b2b2;
 	border-radius: 5px;
 	background-color: #b9e4e3;
 }
 
-.new-tweet-btn:focus {
-	outline: none;
-}
-
 .new-tweet-btn:hover {
 	color: #333333;
-	border-top: 2px solid #b2b2b2;
 	background-color: #a0dbc4;
 }
 
+/*
+----------------------------------------
+TWEET FEED
+----------------------------------------
+*/
 
+.tweet {
+	border: 1px solid black;
+	width: 60%;
+	margin: 20px auto;
+	padding: 10px;
+}

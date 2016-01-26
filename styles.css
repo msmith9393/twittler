@@ -123,7 +123,7 @@ TWEET FEED
 */
 
 .tweet {
-	border: 1px solid black;
+	border-bottom: 1px solid #444;
 	width: 60%;
 	margin: 20px auto;
 	padding: 10px;
@@ -133,7 +133,8 @@ TWEET FEED
 	color: #a0dbc4;
 }
 
-.username {
+.username,
+.title {
 	color: #444;
 	text-decoration: none;
 	font-weight: bold;
@@ -163,3 +164,22 @@ FOOTER
 	margin-top: 10px;
 	font-weight: 100;
 }
+
+/*
+----------------------------------------
+FORM
+----------------------------------------
+*/
+
+.write-tweet {
+	border: 1px solid #444;
+	margin: 20px auto;
+	padding: 10px;
+	border-radius: 10px
+}
+
+.write-tweet-container {
+   display: flex;
+   width: 100%;
+}
+

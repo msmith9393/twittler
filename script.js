@@ -41,6 +41,7 @@ $(document).ready(function(){
       var usernameTitle = $('<h2 class="usernameTitle"> Tweets by: ' + username + '</h2>');
       $('header').append(usernameTitle);
     }
+    $('.write-tweet-container').hide();
     $('.new-tweet-btn').hide();
     $('.back-btn').show();
     $('.tweet-feed').empty();
@@ -49,6 +50,7 @@ $(document).ready(function(){
     
     $(document).on('click', '.back-btn', function(event) {
       var allTweets = streams.home;
+      $('.write-tweet-container').show();
       $('.new-tweet-btn').show();
       $('.usernameTitle').remove();
       $('.back-btn').hide();

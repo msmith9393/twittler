@@ -1,19 +1,3 @@
-/*
-Creates two global variables, users and streams.
-users is an array of strings -- all the usernames that you're following.
-streams is an object with two properties, users and home.
-streams.home is an array of all tweets from all the users you're following.
-streams.users is an object with properties for each user. streams.users.shawndrost has all of shawndrost's tweets.
-Kicks off a periodic process that puts more data in streams.
-You'll mostly be working in the javascript block of index.html. Note: The generated tweets will be displayed in reverse chronological order.
-
-Basic Requirements:
-
-Allow the user to click on a username to see that user's timeline.
-
-Allow the user to tweet. (This is going to require you to understand a little more about data_generator.js, but you shouldn't need to modify anything.)
-*/
-
 $(document).ready(function(){
 
   // when page loads should have generated 11 tweets, therefore index is 10
@@ -38,7 +22,7 @@ $(document).ready(function(){
   $(document).on('click', 'a', function(event) {
     var username = event.currentTarget.innerHTML.slice(1);
     if ($('.usernameTitle').length === 0) {
-      var usernameTitle = $('<h2 class="usernameTitle"> Tweets by: ' + username + '</h2>');
+      var usernameTitle = $('<h2 class="usernameTitle">tweets by ' + username + '</h2>');
       $('header').append(usernameTitle);
     }
     $('.write-tweet-container').hide();
@@ -65,8 +49,8 @@ $(document).ready(function(){
     writeTweet($('.write-message').val());
     renderTweet(streams.home[streams.home.length-1]);
     startIndex = streams.home.length;
+    $('.write-message').val("");
   });
-
 
   function renderTweet(tweet) {
     var messageArr = tweet.message.split('#');
@@ -90,14 +74,3 @@ $(document).ready(function(){
   };
 
 });
-
-
-
-
-
-
-
-
-
-
-

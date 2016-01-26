@@ -80,8 +80,8 @@ h1 {
 
 .usernameTitle {
 	text-align: center;
-	color: #037E8C;
-	font-weight: 400;
+	color: #a0dbc4;
+	font-weight: 700;
 }
 
 
@@ -100,7 +100,7 @@ BUTTON
 	padding: 5px 10px 5px 10px;
 	color: #444;
 	text-shadow: 0px 1px 1px #fff;
-	border: 2px solid #b2b2b2;
+	border: 2px solid #dcdcdc;
 	border-radius: 5px;
 	background-color: #b9e4e3;
 }
@@ -123,7 +123,7 @@ TWEET FEED
 */
 
 .tweet {
-	border-bottom: 1px solid #444;
+	border-bottom: 2px solid #dcdcdc;
 	width: 60%;
 	margin: 20px auto;
 	padding: 10px;
@@ -148,15 +148,22 @@ FOOTER
 */
 
 .footer {
-	background-color: #a0dbc4;
+	background-color: #b9e4e3;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	height: 12%;
+	width: 100%;
 }
 
 .footer-note {
+	font-weight: bold;
+	font-size: 200%;
+	color: #444;
+	text-shadow: 0px 1px 1px #fff;
 	text-align: center;
 	letter-spacing: 2px;
-	font-size: 200%;
 	padding: 20px;
-	font-weight: bold;
 }
 
 .author {
@@ -171,15 +178,56 @@ FORM
 ----------------------------------------
 */
 
+fieldset {
+	padding: 15px;
+	height: 190px;
+	border-radius: 10px;
+	border: 2px solid #dcdcdc;
+}
+
 .write-tweet {
-	border: 1px solid #444;
 	margin: 20px auto;
-	padding: 10px;
-	border-radius: 10px
 }
 
 .write-tweet-container {
    display: flex;
    width: 100%;
+   margin-bottom: 90px;
+}
+
+.write-message {
+	border: 1px solid #dcdcdc;
+}
+
+.title {
+	background-color: #efefef;
+	border: 2px solid #dcdcdc;
+	border-radius: 10px;
+	padding: 7px 17px;
+}
+
+.post {
+	display: block;
+	margin-left: 69%;
+	font-weight: bold;
+	width: 30%;
+	padding: 5px 10px 5px 10px;
+	color: #444;
+	text-shadow: 0px 1px 1px #fff;
+	border: 2px solid #dcdcdc;
+	border-radius: 5px;
+	background-color: #b9e4e3;
+	position: relative;
+	bottom: -5px;
+	font-size: 14px;
+}
+
+.post:focus {
+	outline: none;
+}
+
+.post:hover {
+	color: #333333;
+	background-color: #a0dbc4;
 }
 

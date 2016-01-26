@@ -9,13 +9,8 @@ You'll mostly be working in the javascript block of index.html. Note: The genera
 
 Basic Requirements:
 
-Show the user new tweets somehow. (You can show them automatically as they're created, or create a button that displays new tweets.)
-Display the timestamps of when the tweets were created.
-Design your interface so that you want to look at and use the product you're making.
 Allow the user to click on a username to see that user's timeline.
-Extra credit:
 
-Show when the tweets were created in a human-friendly way (eg "10 minutes ago"). You'll want to find and use a library for this.
 Allow the user to tweet. (This is going to require you to understand a little more about data_generator.js, but you shouldn't need to modify anything.)
 */
 
@@ -37,6 +32,26 @@ $(document).ready(function(){
     renderTweets(newTweets);
     startIndex = newTweets;
   });
+
+  $('.username').on('click', function(event) {
+    var username = event.currentTarget.innerHTML.slice(1);
+    console.log(username);
+    $('.new-tweet-btn').hide();
+    $('.tweet-feed').empty();
+    var usersTweets = streams.users[username];
+    renderTweets(usersTweets);
+
+    $('<button class="back-btn">back to all tweets</button>').insertBefore($('.tweet-feed'))
+    
+    $('.back-btn').on('click', function(event) {
+      var allTweets = streams.home;
+      $('.new-tweet-btn').show();
+      $('.back-btn').hide();
+      $('.tweet-feed').empty();
+      renderTweets(allTweets);
+    });
+  });
+
 
   function renderTweet(tweet) {
     var messageArr = tweet.message.split('#');

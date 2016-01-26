@@ -85,7 +85,8 @@ BUTTON
 ----------------------------------------
 */
 
-.new-tweet-btn {
+.new-tweet-btn,
+.back-btn {
 	display: block;
 	margin: 20px auto;
 	font-weight: bold;
@@ -98,12 +99,14 @@ BUTTON
 	background-color: #b9e4e3;
 }
 
-.new-tweet-btn:hover {
+.new-tweet-btn:hover,
+.back-btn:hover {
 	color: #333333;
 	background-color: #a0dbc4;
 }
 
-.new-tweet-btn:focus {
+.new-tweet-btn:focus,
+.back-btn:focus {
 	outline: none;
 }
 

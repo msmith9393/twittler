@@ -23,6 +23,8 @@ $(document).ready(function(){
 
   // when page loads should have generated 11 tweets, therefore index is 10
   var index = streams.home.length - 1;
+  // start index for new tweets that are being created every few seconds
+  var startIndex = streams.home.length
 
   while(index >= 0){
     var tweet = streams.home[index];
@@ -30,10 +32,31 @@ $(document).ready(function(){
     index -= 1;
   }
 
+  $('.new-tweet-btn').on('click', function() {
+    var newTweets = streams.home.slice(startIndex);
+    renderTweets(newTweets);
+    startIndex = newTweets;
+  });
+
   function renderTweet(tweet) {
+    var messageArr = tweet.message.split('#');
+
+    if (messageArr[1] === undefined) {
+      messageArr[1] = '';
+    } else {
+      messageArr[1] = '#' + messageArr[1];
+    }
+
     var $tweet = $('<div class="tweet"></div>');
-    $tweet.text('@' + tweet.user + ': ' + tweet.message);
-    $tweet.prependTo($('.tweet-feed'))
+    $tweet.append('<p><a href="#" class="username">@' + tweet.user + '</a> &bull; <span class="date">' + tweet.created_at + '</span></p>')
+    .append('<p>' + messageArr[0] + '<span class="hashtag">' + messageArr[1] + '</span></p>')
+    .prependTo($('.tweet-feed'))
+  };
+
+  function renderTweets(newTweets) {
+    for (var i=0; i<newTweets.length; i++) {
+      renderTweet(newTweets[i]);
+    }
   };
 
 });

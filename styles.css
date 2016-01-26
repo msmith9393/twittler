@@ -103,6 +103,10 @@ BUTTON
 	background-color: #a0dbc4;
 }
 
+.new-tweet-btn:focus {
+	outline: none;
+}
+
 /*
 ----------------------------------------
 TWEET FEED

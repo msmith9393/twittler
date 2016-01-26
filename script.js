@@ -32,7 +32,7 @@ $(document).ready(function(){
   $(document).on('click', '.new-tweet-btn', function() {
     var newTweets = streams.home.slice(startIndex);
     renderTweets(newTweets);
-    startIndex = newTweets.length;
+    startIndex = streams.home.length;
   });
 
   $(document).on('click', 'a', function(event) {
@@ -57,6 +57,14 @@ $(document).ready(function(){
       $('.tweet-feed').empty();
       renderTweets(allTweets);
     });
+  });
+
+  $('.write-tweet').submit(function(event) {
+    event.preventDefault();
+    visitor = $('.username-form').val();
+    writeTweet($('.write-message').val());
+    renderTweet(streams.home[streams.home.length-1]);
+    startIndex = streams.home.length;
   });
 
 
